@@ -1,0 +1,202 @@
+[
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    },
+    {
+        "timestamp": 0.0,
+        "camera_objects": [
+            {
+                "class_id": -1,
+                "bbox_2d": []
+            }
+        ],
+        "radar_objects": [],
+        "lidar_clusters": [
+            {
+                "centroid_3d": [
+                    10.5,
+                    0.0,
+                    -1.2
+                ],
+                "volume": 8.4
+            }
+        ]
+    }
+]

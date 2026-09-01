@@ -1,0 +1,201 @@
+Detection_ID,Time,SensorIndex,ObjectClassID,Measurement
+0,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,         11,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,         26,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,         31,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+1,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,         62,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,         77,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,         82,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+2,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        113,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        128,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        133,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+3,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        164,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        179,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        184,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+4,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        215,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        230,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        235,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+5,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        266,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        281,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        286,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+6,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        317,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        332,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        337,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+7,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        368,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        383,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        388,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+8,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        419,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        434,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        439,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+9,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        470,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        485,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        490,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+10,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        521,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        536,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        541,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+11,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        572,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        587,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        592,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+12,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        623,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        638,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        643,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+13,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        674,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        689,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        694,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+14,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        725,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        740,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        745,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+15,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        776,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        791,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        796,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+16,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        827,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        842,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        847,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+17,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        878,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        893,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        898,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+18,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        929,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        944,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        949,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+19,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        980,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,        995,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1000,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+20,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1031,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1046,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1051,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+21,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1082,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1097,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1102,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+22,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1133,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1148,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1153,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+23,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1184,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1199,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1204,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+24,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1235,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1250,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1255,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+25,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1286,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1301,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1306,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+26,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1337,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1352,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1357,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+27,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1388,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1403,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1408,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+28,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1439,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1454,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1459,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+29,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1490,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1505,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1510,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+30,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1541,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1556,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1561,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+31,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1592,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1607,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1612,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+32,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1643,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1658,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1663,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+33,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1694,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1709,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1714,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+34,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1745,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1760,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1765,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+35,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1796,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1811,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1816,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+36,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1847,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1862,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1867,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+37,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1898,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1913,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1918,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+38,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1949,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1964,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       1969,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+39,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2000,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2015,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2020,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+40,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2051,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2066,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2071,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+41,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2102,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2117,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2122,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+42,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2153,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2168,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2173,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+43,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2204,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2219,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2224,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+44,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2255,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2270,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2275,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+45,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2306,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2321,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2326,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+46,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2357,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2372,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2377,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+47,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2408,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2423,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2428,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+48,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2459,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2474,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2479,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object
+49,"[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2510,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2525,
+                 5], dtype=uint32))                                                              ]","[(b'', b'MCOS', b'timeseries', array([3707764736,          2,          1,          1,       2530,
+                 5], dtype=uint32))                                                              ]",MCOS_Nested_Object

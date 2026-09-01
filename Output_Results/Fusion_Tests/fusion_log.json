@@ -1,0 +1,530 @@
+[
+    {
+        "frame_idx": 0,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.191650390625,
+                    1278.912109375,
+                    719.4229736328125
+                ],
+                "radar_azimuth": 10.0,
+                "radar_range": 50.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    642.2459716796875,
+                    357.18756103515625,
+                    1277.648193359375,
+                    488.4219970703125
+                ],
+                "radar_azimuth": 10.0,
+                "radar_range": 50.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.641845703125,
+                    352.0941162109375,
+                    939.0708618164062,
+                    449.356201171875
+                ],
+                "radar_azimuth": 10.0,
+                "radar_range": 50.0,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 1,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.2894287109375,
+                    1278.7286376953125,
+                    719.5517578125
+                ],
+                "radar_azimuth": 9.5,
+                "radar_range": 48.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    641.3564453125,
+                    357.22808837890625,
+                    1277.872802734375,
+                    488.30596923828125
+                ],
+                "radar_azimuth": 9.5,
+                "radar_range": 48.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.6224365234375,
+                    351.7325439453125,
+                    942.9033203125,
+                    449.7259521484375
+                ],
+                "radar_azimuth": 9.5,
+                "radar_range": 48.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.7470703125,
+                    1141.7294921875,
+                    522.6870727539062
+                ],
+                "radar_azimuth": 9.5,
+                "radar_range": 48.5,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 2,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.3254089355469,
+                    1278.691162109375,
+                    719.4931640625
+                ],
+                "radar_azimuth": 9.0,
+                "radar_range": 47.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    640.571533203125,
+                    357.44342041015625,
+                    1277.64892578125,
+                    486.93634033203125
+                ],
+                "radar_azimuth": 9.0,
+                "radar_range": 47.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.61529541015625,
+                    351.135498046875,
+                    955.2780151367188,
+                    448.148193359375
+                ],
+                "radar_azimuth": 9.0,
+                "radar_range": 47.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.56744384765625,
+                    1158.0545654296875,
+                    522.322509765625
+                ],
+                "radar_azimuth": 9.0,
+                "radar_range": 47.0,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 3,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.3931884765625,
+                    1278.7666015625,
+                    719.472900390625
+                ],
+                "radar_azimuth": 8.5,
+                "radar_range": 45.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    641.218994140625,
+                    357.16778564453125,
+                    1277.69970703125,
+                    487.72528076171875
+                ],
+                "radar_azimuth": 8.5,
+                "radar_range": 45.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.64306640625,
+                    351.65838623046875,
+                    942.5584716796875,
+                    450.15777587890625
+                ],
+                "radar_azimuth": 8.5,
+                "radar_range": 45.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.919189453125,
+                    1151.910400390625,
+                    519.7078857421875
+                ],
+                "radar_azimuth": 8.5,
+                "radar_range": 45.5,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 4,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    352.9909362792969,
+                    1278.7025146484375,
+                    719.549072265625
+                ],
+                "radar_azimuth": 8.0,
+                "radar_range": 44.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    640.847412109375,
+                    357.4007568359375,
+                    1277.59814453125,
+                    487.015869140625
+                ],
+                "radar_azimuth": 8.0,
+                "radar_range": 44.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.559814453125,
+                    351.4075927734375,
+                    952.1637573242188,
+                    449.7115478515625
+                ],
+                "radar_azimuth": 8.0,
+                "radar_range": 44.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.747802734375,
+                    1142.035888671875,
+                    518.921630859375
+                ],
+                "radar_azimuth": 8.0,
+                "radar_range": 44.0,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 5,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.07135009765625,
+                    1278.662109375,
+                    719.4087524414062
+                ],
+                "radar_azimuth": 7.5,
+                "radar_range": 42.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    640.600830078125,
+                    357.38299560546875,
+                    1277.662353515625,
+                    487.6787109375
+                ],
+                "radar_azimuth": 7.5,
+                "radar_range": 42.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.52606201171875,
+                    351.4856872558594,
+                    953.0718383789062,
+                    449.6519470214844
+                ],
+                "radar_azimuth": 7.5,
+                "radar_range": 42.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.160888671875,
+                    1168.843017578125,
+                    520.52197265625
+                ],
+                "radar_azimuth": 7.5,
+                "radar_range": 42.5,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 6,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.0380859375,
+                    1278.696044921875,
+                    719.671630859375
+                ],
+                "radar_azimuth": 7.0,
+                "radar_range": 41.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    641.098876953125,
+                    357.38104248046875,
+                    1277.8909912109375,
+                    487.35784912109375
+                ],
+                "radar_azimuth": 7.0,
+                "radar_range": 41.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.526611328125,
+                    351.07098388671875,
+                    957.9622192382812,
+                    449.85614013671875
+                ],
+                "radar_azimuth": 7.0,
+                "radar_range": 41.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.5673828125,
+                    1159.44189453125,
+                    519.3214111328125
+                ],
+                "radar_azimuth": 7.0,
+                "radar_range": 41.0,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 7,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    352.8677673339844,
+                    1278.981689453125,
+                    719.5093994140625
+                ],
+                "radar_azimuth": 6.5,
+                "radar_range": 39.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    641.093505859375,
+                    357.35076904296875,
+                    1277.457763671875,
+                    486.53961181640625
+                ],
+                "radar_azimuth": 6.5,
+                "radar_range": 39.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.62445068359375,
+                    351.65716552734375,
+                    952.2835083007812,
+                    449.30316162109375
+                ],
+                "radar_azimuth": 6.5,
+                "radar_range": 39.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.48480224609375,
+                    1154.931396484375,
+                    517.9404907226562
+                ],
+                "radar_azimuth": 6.5,
+                "radar_range": 39.5,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 8,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    353.0591125488281,
+                    1278.85791015625,
+                    719.416259765625
+                ],
+                "radar_azimuth": 6.0,
+                "radar_range": 38.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    642.086669921875,
+                    357.25054931640625,
+                    1277.714111328125,
+                    489.24249267578125
+                ],
+                "radar_azimuth": 6.0,
+                "radar_range": 38.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.633056640625,
+                    351.99835205078125,
+                    946.073974609375,
+                    448.94940185546875
+                ],
+                "radar_azimuth": 6.0,
+                "radar_range": 38.0,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.56585693359375,
+                    1160.70361328125,
+                    523.1403198242188
+                ],
+                "radar_azimuth": 6.0,
+                "radar_range": 38.0,
+                "radar_velocity": -15.0
+            }
+        ]
+    },
+    {
+        "frame_idx": 9,
+        "timestamp": 0.0,
+        "objects": [
+            {
+                "class": "road",
+                "bbox": [
+                    0.0,
+                    352.990478515625,
+                    1278.7020263671875,
+                    719.5506591796875
+                ],
+                "radar_azimuth": 5.5,
+                "radar_range": 36.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    641.1588134765625,
+                    357.14666748046875,
+                    1277.731689453125,
+                    488.09173583984375
+                ],
+                "radar_azimuth": 5.5,
+                "radar_range": 36.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.0,
+                    348.67193603515625,
+                    1148.961181640625,
+                    522.9502563476562
+                ],
+                "radar_azimuth": 5.5,
+                "radar_range": 36.5,
+                "radar_velocity": -15.0
+            },
+            {
+                "class": "guard_rail",
+                "bbox": [
+                    0.6148681640625,
+                    351.92230224609375,
+                    946.3095092773438,
+                    449.75469970703125
+                ],
+                "radar_azimuth": 5.5,
+                "radar_range": 36.5,
+                "radar_velocity": -15.0
+            }
+        ]
+    }
+]

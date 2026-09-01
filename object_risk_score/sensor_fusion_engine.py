@@ -4,8 +4,7 @@ import numpy as np
 import matplotlib.path as mplPath
 import matplotlib.pyplot as plt
 import trajectory_planner as tp
-import matplotlib.path as mplPath
-import matplotlib.pyplot as plt
+from risk_score_calculator import calculate_risk
 
 # ==========================================
 # SENSOR FUSION ENGINE
@@ -63,7 +62,7 @@ def parse_camera_polygons():
     Returns mock Camera Polygons (bounding boxes) for 5 generated objects in a crowded scene.
     """
     # Class 0: Car (Dead center, Range 15 -> U=640)
-    car_pts = [[600.0, 370.0], [680.0, 370.0], [680.0, 400.0], [600.0, 400.0]]
+    car_pts = [[600.0, 370.0], [680.0, 370.0], [680.0, 450.0], [600.0, 450.0]]
     
     # Class 6: Pedestrian (Azimuth 14.0 -> U=839)
     ped_pts = [[810.0, 390.0], [870.0, 390.0], [870.0, 430.0], [810.0, 430.0]]
@@ -112,11 +111,9 @@ def get_fused_objects():
     Simulates the sensor fusion pipeline for a single frame, returning the initial world state.
     """
     raw_radar_data = [
-        {'id': 1, 'azimuth': 0.0, 'range': 15.0, 'range_rate': -2.0}, # Center (Car)
-        {'id': 2, 'azimuth': 14.0, 'range': 10.3, 'range_rate': 0.0}, # Far Left (Pedestrian)
-        {'id': 3, 'azimuth': -11.7, 'range': 12.25, 'range_rate': 0.0}, # Far Right (Bicycle)
-        {'id': 4, 'azimuth': 2.8, 'range': 20.0, 'range_rate': 0.0}, # Left-Center (Pothole)
-        {'id': 5, 'azimuth': 0.0, 'range': 25.0, 'range_rate': -5.0}, # Center further up (Truck)
+        {'id': 1, 'azimuth': 0.0, 'range': 10.0, 'range_rate': -2.0}, # Very close, directly in lane (Car)
+        {'id': 2, 'azimuth': -2.8, 'range': 15.0, 'range_rate': 0.0}, # Stepping into path from left (Pedestrian)
+        {'id': 3, 'azimuth': 1.4, 'range': 20.0, 'range_rate': -5.0}, # Further ahead, braking hard (Truck)
     ]
     
     radar_blips = []
@@ -133,9 +130,12 @@ def get_fused_objects():
     world_objects = []
     for blip in fused_blips:
         if blip['class_id'] != -1:
+            # Calculate mathematical risk based on physics
+            risk_score = calculate_risk(blip['x'], blip['y'], blip['vx'], blip['vy'])
+            
             obj = tp.WorldObject(
                 obj_id=blip['obj_id'], class_id=blip['class_id'], 
-                x=blip['x'], y=blip['y'], vx=blip['vx'], vy=blip['vy'], risk_score=50
+                x=blip['x'], y=blip['y'], vx=blip['vx'], vy=blip['vy'], risk_score=risk_score
             )
             world_objects.append(obj)
             

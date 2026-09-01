@@ -96,13 +96,11 @@ def plot_object_trajectories(objects, predicted_obs, ttc_results, ego_speed, tim
 def main():
     print("Initializing Object Planner & Threat Assessment Node...")
     
-    # Mock World State (Crowded Scene from Sensor Fusion at Frame 0)
+    # Mock World State (Syncing to the Imminent Crash Scenario from Sensor Fusion)
     objects = [
-        WorldObject(obj_id=1, class_id=0, x=15.0, y=0.0, vx=-2.0, vy=0.0, risk_score=50), # Center Car
-        WorldObject(obj_id=2, class_id=6, x=10.0, y=2.5, vx=0.0, vy=0.0, risk_score=50),  # Pedestrian
-        WorldObject(obj_id=3, class_id=5, x=12.0, y=-2.5, vx=0.0, vy=0.0, risk_score=50), # Bicycle
-        WorldObject(obj_id=4, class_id=0, x=20.0, y=1.0, vx=0.0, vy=0.0, risk_score=50),  # Pothole
-        WorldObject(obj_id=5, class_id=0, x=25.0, y=0.0, vx=-5.0, vy=0.0, risk_score=50), # Truck
+        WorldObject(obj_id=1, class_id=0, x=10.0, y=0.0, vx=-2.0, vy=0.0, risk_score=18.9), # Close Car
+        WorldObject(obj_id=2, class_id=6, x=15.0, y=-0.28, vx=0.0, vy=0.0, risk_score=6.2), # Pedestrian
+        WorldObject(obj_id=3, class_id=0, x=20.0, y=0.48, vx=-5.0, vy=0.0, risk_score=17.0) # Far Car
     ]
     
     time_horizon = 3.0

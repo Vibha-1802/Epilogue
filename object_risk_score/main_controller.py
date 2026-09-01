@@ -9,9 +9,11 @@ def main():
     print("==================================================")
     
     # 1. Initialize Sensor Fusion to get starting frame objects
-    print("\n[PERCEPTION] Polling sensors...")
+    print("\n[PERCEPTION] Polling sensors & Calculating Risk...")
     world_objects = get_fused_objects()
     print(f"  -> Extracted {len(world_objects)} fused WorldObjects.")
+    for obj in world_objects:
+        print(f"     - {obj.name.upper()} (ID: {obj.obj_id}) | Risk Score: {obj.risk_score:.1f}/100")
     
     time_horizon = 3.0
     ego_speed = 10.0 # 10 m/s

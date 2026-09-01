@@ -12,21 +12,20 @@ LOW_RISK_THRESHOLD = 15.0 # Risk percentage below which an object is considered 
 
 def create_dummy_data():
     """Create a dummy radar_detections.csv if the MATLAB export hasn't been run."""
-    print(f"Warning: {CSV_FILE} not found. Creating a demonstration dataset.")
+    print(f"Warning: {CSV_FILE} not found. Creating a demonstration dataset (Imminent Crash Scenario).")
     data = []
-    # Object 1: Fast approaching, high risk
-    # Object 2: Moving away, low risk, disappears early
-    # Object 3: Stationary, medium risk
+    # Object 1: Close Car (ID: 1)
+    # Object 2: Pedestrian (ID: 2)
+    # Object 3: Far Car (ID: 3)
     for t in np.arange(0, 3.0, 0.1):
-        # Obj 1: starts at 50m, moves at -20m/s
-        data.append([t, 1, 50 - 20*t, 2, -20, 0])
+        # Obj 1: starts at 10m, moves at -2.0m/s
+        data.append([t, 1, 10 + (-2.0)*t, 0.0, -2.0, 0])
         
-        # Obj 2: starts at 10m, moves at +15m/s (away). Disappears after t=1.0
-        if t <= 1.0:
-            data.append([t, 2, 10 + 15*t, -5, 15, 0])
+        # Obj 2: starts at 15m, stationary (Pedestrian stepping in)
+        data.append([t, 2, 15, -0.28, 0.0, 0])
             
-        # Obj 3: starts at 30m, stationary
-        data.append([t, 3, 30, 0, 0, 0])
+        # Obj 3: starts at 20m, moves at -5.0m/s
+        data.append([t, 3, 20 + (-5.0)*t, 0.48, -5.0, 0])
         
     df = pd.DataFrame(data, columns=['Time', 'ObjectID', 'X', 'Y', 'VX', 'VY'])
     df.to_csv(CSV_FILE, index=False)

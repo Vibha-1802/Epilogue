@@ -179,6 +179,10 @@ def main():
             best_traj = tr
             
     print(f"\n>> Selected Best Path: Offset {best_traj['offset']}m")
+    
+    # Export Controls for Simulink
+    tp.export_simulink_controls(best_traj, min_cost, time_horizon)
+    
     tp.plot_scene(world_objects, best_traj, candidates, predicted_obs)
 
 if __name__ == "__main__":

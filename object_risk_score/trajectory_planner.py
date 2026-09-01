@@ -229,10 +229,11 @@ def plot_scene(objects, best_traj, all_trajs, predicted_obs):
 def main():
     # 1. Mock the World State (Fusion of Radar + Camera Semantic Class)
     objects = [
-        # Road region straight ahead (Class 8)
-        WorldObject(obj_id=1, class_id=8, x=15.0, y=0.0, vx=-5.0, vy=0.0, risk_score=5),
-        # Guard Rail off to the side (Class 15)
-        WorldObject(obj_id=2, class_id=15, x=21.7, y=12.5, vx=0.0, vy=0.0, risk_score=20)
+        WorldObject(obj_id=1, class_id=0, x=15.0, y=0.0, vx=-2.0, vy=0.0, risk_score=50), # Center Car
+        WorldObject(obj_id=2, class_id=6, x=10.0, y=2.5, vx=0.0, vy=0.0, risk_score=50),  # Pedestrian
+        WorldObject(obj_id=3, class_id=5, x=12.0, y=-2.5, vx=0.0, vy=0.0, risk_score=50), # Bicycle
+        WorldObject(obj_id=4, class_id=0, x=20.0, y=1.0, vx=0.0, vy=0.0, risk_score=50),  # Pothole
+        WorldObject(obj_id=5, class_id=0, x=25.0, y=0.0, vx=-5.0, vy=0.0, risk_score=50), # Truck
     ]
     
     time_horizon = 3.0

@@ -107,10 +107,10 @@ def assign_semantic_classes(radar_blips, polygons):
             
     return radar_blips
 
-def main():
-    print("Initializing Sensor Fusion Node...")
-    
-    # 1. Simulate reading radar blips from r_data_readable.json
+def get_fused_objects():
+    """
+    Simulates the sensor fusion pipeline for a single frame, returning the initial world state.
+    """
     raw_radar_data = [
         {'id': 1, 'azimuth': 0.0, 'range': 15.0, 'range_rate': -2.0}, # Center (Car)
         {'id': 2, 'azimuth': 14.0, 'range': 10.3, 'range_rate': 0.0}, # Far Left (Pedestrian)
@@ -119,44 +119,31 @@ def main():
         {'id': 5, 'azimuth': 0.0, 'range': 25.0, 'range_rate': -5.0}, # Center further up (Truck)
     ]
     
-    print(f"Extracted {len(raw_radar_data)} radar detections.")
-    
-    # 2. Transform and Project
     radar_blips = []
     for data in raw_radar_data:
         x, y, vx, vy = polar_to_cartesian(data['range'], data['azimuth'], data['range_rate'])
         u, v = heuristic_projection(data['range'], data['azimuth'])
-        
         radar_blips.append({
-            'obj_id': data['id'],
-            'x': x, 'y': y, 'vx': vx, 'vy': vy,
-            'u': u, 'v': v,
-            'class_id': None
+            'obj_id': data['id'], 'x': x, 'y': y, 'vx': vx, 'vy': vy, 'u': u, 'v': v, 'class_id': None
         })
-        print(f"Radar {data['id']}: (X:{x:.1f}, Y:{y:.1f}) -> Projected Pixel: (U:{u:.1f}, V:{v:.1f})")
         
-    # 3. Fetch Camera Semantic Polygons
     polygons = parse_camera_polygons()
-    
-    # 4. Ray Casting / Point-in-Polygon Fusion
-    print("\nFusing Radar Kinematics with Camera Semantics via Ray Casting...")
     fused_blips = assign_semantic_classes(radar_blips, polygons)
     
     world_objects = []
     for blip in fused_blips:
-        class_name = tp.CLASS_RULES.get(blip['class_id'], {}).get('name', 'unknown')
-        print(f"Fused Object {blip['obj_id']}: Assigned Semantic Class -> {class_name.upper()} (Class ID {blip['class_id']})")
-        
-        # Only add known objects to the trajectory planner
         if blip['class_id'] != -1:
             obj = tp.WorldObject(
-                obj_id=blip['obj_id'], 
-                class_id=blip['class_id'], 
-                x=blip['x'], y=blip['y'], 
-                vx=blip['vx'], vy=blip['vy'], 
-                risk_score=50
+                obj_id=blip['obj_id'], class_id=blip['class_id'], 
+                x=blip['x'], y=blip['y'], vx=blip['vx'], vy=blip['vy'], risk_score=50
             )
             world_objects.append(obj)
+            
+    return world_objects
+
+def main():
+    print("Initializing Sensor Fusion Node...")
+    world_objects = get_fused_objects()
 
     # 5. Output ready for Trajectory Planner
     print("\nPassing fused objects directly to trajectory_planner.py...")
@@ -181,7 +168,8 @@ def main():
     print(f"\n>> Selected Best Path: Offset {best_traj['offset']}m")
     
     # Export Controls for Simulink
-    tp.export_simulink_controls(best_traj, min_cost, time_horizon)
+    aeb_triggered = min_cost > 1000000
+    tp.export_simulink_controls(best_traj, aeb_triggered, time_horizon)
     
     tp.plot_scene(world_objects, best_traj, candidates, predicted_obs)
 

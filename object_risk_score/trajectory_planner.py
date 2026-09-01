@@ -38,8 +38,7 @@ class WorldObject:
         self.uncertainty = rules['uncertainty']
         self.hard_boundary = rules['hard_boundary']
         self.cost_weight = rules['cost_weight']
-
-def export_simulink_controls(best_traj, min_cost, time_horizon=3.0, dt=0.5):
+def export_simulink_controls(best_traj, aeb_triggered, time_horizon=3.0, dt=0.5):
     """
     Translates the lateral offset of the best trajectory into physical
     Ackermann steering inputs and outputs a MATLAB .m script.
@@ -60,8 +59,7 @@ def export_simulink_controls(best_traj, min_cost, time_horizon=3.0, dt=0.5):
         delta = peak_steer * math.sin(2 * math.pi * (t / time_horizon))
         steer_vector.append(round(delta, 4))
         
-    # 2. Calculate Acceleration Profile (AEB trigger if cost is > 1M)
-    aeb_triggered = min_cost > 1000000
+    # 2. Calculate Acceleration Profile (AEB trigger if cost is > 1M or explicitly triggered)
     
     accel_vector = []
     for t in time_vector:
@@ -260,7 +258,8 @@ def main():
     print(f"\n>> Selected Best Path: Offset {best_traj['offset']}m")
     
     # 5. Export Controls for Simulink
-    export_simulink_controls(best_traj, min_cost, time_horizon)
+    aeb_triggered = min_cost > 1000000
+    export_simulink_controls(best_traj, aeb_triggered, time_horizon)
     
     # 6. Visualize
     plot_scene(objects, best_traj, candidates, predicted_obs)

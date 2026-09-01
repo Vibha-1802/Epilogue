@@ -1,0 +1,213 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# ==========================================
+# SEMANTIC CLASS DEFINITIONS & BEHAVIOR
+# ==========================================
+# Define behavior rules for each class ID based on the provided table.
+# Uncertainty: How much we inflate their predicted bounding box (meters).
+# Hard Boundary: True if the ego vehicle can NEVER cross this (infinite cost).
+CLASS_RULES = {
+    0: {'name': 'car', 'uncertainty': 0.5, 'hard_boundary': False, 'cost_weight': 10},
+    1: {'name': 'bus', 'uncertainty': 1.0, 'hard_boundary': False, 'cost_weight': 20},
+    2: {'name': 'truck', 'uncertainty': 1.0, 'hard_boundary': False, 'cost_weight': 20},
+    3: {'name': 'autorickshaw', 'uncertainty': 1.5, 'hard_boundary': False, 'cost_weight': 15},
+    4: {'name': 'two_wheeler', 'uncertainty': 2.0, 'hard_boundary': False, 'cost_weight': 15},
+    5: {'name': 'bicycle', 'uncertainty': 1.0, 'hard_boundary': False, 'cost_weight': 10},
+    6: {'name': 'pedestrian', 'uncertainty': 0.8, 'hard_boundary': False, 'cost_weight': 50}, # Moderately unpredictable
+    7: {'name': 'animal', 'uncertainty': 1.5, 'hard_boundary': False, 'cost_weight': 50},
+    8: {'name': 'road', 'uncertainty': 0.0, 'hard_boundary': False, 'cost_weight': -5}, # Reward for staying on road
+    11: {'name': 'curb', 'uncertainty': 0.0, 'hard_boundary': True, 'cost_weight': float('inf')},
+    13: {'name': 'wall', 'uncertainty': 0.0, 'hard_boundary': True, 'cost_weight': float('inf')},
+    20: {'name': 'pothole', 'uncertainty': 0.5, 'hard_boundary': False, 'cost_weight': 30}
+}
+
+class WorldObject:
+    def __init__(self, obj_id, class_id, x, y, vx, vy, risk_score):
+        self.obj_id = obj_id
+        self.class_id = class_id
+        self.x = x
+        self.y = y
+        self.vx = vx
+        self.vy = vy
+        self.risk_score = risk_score
+        
+        rules = CLASS_RULES.get(class_id, {'name': 'unknown', 'uncertainty': 1.0, 'hard_boundary': False, 'cost_weight': 10})
+        self.name = rules['name']
+        self.uncertainty = rules['uncertainty']
+        self.hard_boundary = rules['hard_boundary']
+        self.cost_weight = rules['cost_weight']
+
+def predict_obstacle_trajectories(objects, time_horizon, dt=0.5):
+    """
+    Projects the future positions of objects.
+    Applies class-based uncertainty (expands their effective radius over time).
+    """
+    predictions = {}
+    for obj in objects:
+        traj = []
+        for t in np.arange(0, time_horizon + dt, dt):
+            # Static objects (walls, potholes) don't move.
+            if obj.hard_boundary or obj.name in ['pothole']:
+                fut_x = obj.x
+                fut_y = obj.y
+                radius = 1.0 # fixed size
+            else:
+                # Constant velocity prediction
+                fut_x = obj.x + obj.vx * t
+                fut_y = obj.y + obj.vy * t
+                # Uncertainty grows over time based on class unpredictability
+                radius = 1.0 + (obj.uncertainty * t)
+            
+            traj.append({'time': t, 'x': fut_x, 'y': fut_y, 'radius': radius})
+        predictions[obj.obj_id] = traj
+    return predictions
+
+def generate_candidate_trajectories(ego_speed, time_horizon, dt=0.5):
+    """
+    Generates a fan of possible paths for the ego vehicle.
+    For simplicity, generating lateral offsets (swerving left/right) and straight.
+    """
+    trajectories = []
+    # Generate a finer resolution of lateral offsets (every 0.5m) to find the absolute minimum required deviation
+    lateral_offsets = np.arange(-3.0, 3.1, 0.5) 
+    
+    for lat in lateral_offsets:
+        path = []
+        for t in np.arange(0, time_horizon + dt, dt):
+            # Smooth lane change shape using sine wave
+            progress = min(1.0, t / (time_horizon * 0.5)) 
+            current_lat = lat * (0.5 - 0.5 * np.cos(progress * np.pi))
+            
+            x = ego_speed * t
+            y = current_lat
+            path.append({'time': t, 'x': x, 'y': y})
+        trajectories.append({'offset': lat, 'path': path})
+    return trajectories
+
+def evaluate_trajectory_cost(trajectory, predicted_obstacles, objects_list):
+    """
+    Evaluates the cost of a trajectory based on distance to obstacles and hard boundaries.
+    """
+    total_cost = 0.0
+    
+    # Base cost: massively penalize swerving to strictly enforce "minimum deviation"
+    total_cost += abs(trajectory['offset']) * 50000.0
+    
+    path = trajectory['path']
+    for point in path:
+        t = point['time']
+        for obj in objects_list:
+            obj_id = obj.obj_id
+            obs_traj = predicted_obstacles[obj_id]
+            # Find the obstacle's projected position at time t
+            obs_state = next((s for s in obs_traj if abs(s['time'] - t) < 0.01), None)
+            if obs_state:
+                dist = np.sqrt((point['x'] - obs_state['x'])**2 + (point['y'] - obs_state['y'])**2)
+                
+                # Check collision with inflated radius
+                if dist < obs_state['radius']:
+                    if obj.hard_boundary:
+                        total_cost += float('inf') # Hard constraint (wall, curb)
+                    else:
+                        total_cost += 100000.0 * obj.cost_weight # Massive Semantic penalty (e.g. Pedestrian=5,000,000)
+                else:
+                    # Inverse distance penalty (closer = higher cost)
+                    if obj.hard_boundary:
+                        total_cost += 10000.0 / (dist + 0.1)
+                    else:
+                        total_cost += (10.0 * obj.cost_weight) / (dist + 0.1)
+                    
+    return total_cost
+
+def plot_scene(objects, best_traj, all_trajs, predicted_obs):
+    plt.figure(figsize=(12, 8))
+    
+    # Plot Ego Vehicle Start
+    plt.plot(0, 0, 'b^', markersize=15, label='Ego Start')
+    
+    # Plot all candidate trajectories
+    for tr in all_trajs:
+        xs = [p['x'] for p in tr['path']]
+        ys = [p['y'] for p in tr['path']]
+        plt.plot(xs, ys, 'k--', alpha=0.3)
+        
+    # Plot Best Trajectory
+    xs = [p['x'] for p in best_traj['path']]
+    ys = [p['y'] for p in best_traj['path']]
+    plt.plot(xs, ys, 'g-', linewidth=3, label='Chosen Safe Path')
+    
+    # Plot Obstacles and their uncertainty bounds
+    for obj in objects:
+        traj = predicted_obs[obj.obj_id]
+        
+        color = 'r' if obj.hard_boundary else 'orange'
+        if obj.name == 'pedestrian': color = 'purple'
+        if obj.name == 'pothole': color = 'brown'
+        
+        # Plot center at t=0
+        plt.plot(obj.x, obj.y, marker='s', color=color, markersize=10, label=f'{obj.name} (ID:{obj.obj_id})')
+        
+        # Plot predicted expansion (uncertainty) at t=max
+        final_state = traj[-1]
+        circle = patches.Circle((final_state['x'], final_state['y']), final_state['radius'], 
+                              linewidth=1, edgecolor=color, facecolor=color, alpha=0.2)
+        plt.gca().add_patch(circle)
+        
+        # Draw dotted line for predicted movement path
+        oxs = [p['x'] for p in traj]
+        oys = [p['y'] for p in traj]
+        plt.plot(oxs, oys, color=color, linestyle=':')
+        
+    plt.title('Trajectory Planning & Dynamic Avoidance')
+    plt.xlabel('Longitudinal Distance (X)')
+    plt.ylabel('Lateral Distance (Y)')
+    plt.grid(True)
+    
+    # Avoid duplicate labels in legend
+    handles, labels = plt.gca().get_legend_handles_labels()
+    by_label = dict(zip(labels, handles))
+    plt.legend(by_label.values(), by_label.keys())
+    
+    plt.axis('equal')
+    plt.savefig('trajectory_plan_output.png')
+    print("Saved plot to trajectory_plan_output.png")
+
+def main():
+    # 1. Mock the World State (Fusion of Radar + Camera Semantic Class)
+    objects = [
+        # Road region straight ahead (Class 8)
+        WorldObject(obj_id=1, class_id=8, x=15.0, y=0.0, vx=-5.0, vy=0.0, risk_score=5),
+        # Guard Rail off to the side (Class 15)
+        WorldObject(obj_id=2, class_id=15, x=21.7, y=12.5, vx=0.0, vy=0.0, risk_score=20)
+    ]
+    
+    time_horizon = 3.0
+    ego_speed = 10.0 # 10 m/s
+    
+    # 2. Predict Trajectories with Class-Weighted Uncertainty
+    predicted_obs = predict_obstacle_trajectories(objects, time_horizon)
+    
+    # 3. Generate Candidate Paths
+    candidates = generate_candidate_trajectories(ego_speed, time_horizon)
+    
+    # 4. Evaluate Costs
+    best_traj = None
+    min_cost = float('inf')
+    
+    print("\nEvaluating Trajectories:")
+    for tr in candidates:
+        cost = evaluate_trajectory_cost(tr, predicted_obs, objects)
+        print(f"Path Offset {tr['offset']:>4.1f}m -> Cost: {cost:.2f}")
+        if cost < min_cost:
+            min_cost = cost
+            best_traj = tr
+            
+    print(f"\n>> Selected Best Path: Offset {best_traj['offset']}m")
+    
+    # 5. Visualize
+    plot_scene(objects, best_traj, candidates, predicted_obs)
+
+if __name__ == "__main__":
+    main()

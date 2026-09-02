@@ -4,3 +4,6 @@
 .ipynb_checkpoints/
 __pycache__/
 scratch/
+
+*.mp4
+*.onnx

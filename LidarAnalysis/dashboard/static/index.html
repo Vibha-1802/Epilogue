@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foveated 2.5D LiDAR Map</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <!-- ============ map ============ -->
+  <section class="stage">
+    <canvas id="map"></canvas>
+
+    <div class="topbar">
+      <div class="title">Foveated 2.5D semantic map
+        <small id="subtitle">loading&hellip;</small>
+      </div>
+
+      <div class="seg" role="group" aria-label="Map layer">
+        <button data-layer="kind"  aria-pressed="true">Semantic</button>
+        <button data-layer="class" aria-pressed="false">Fine class</button>
+        <button data-layer="elev"  aria-pressed="false">Elevation</button>
+        <button data-layer="cost"  aria-pressed="false">Traversability</button>
+        <button data-layer="lod"   aria-pressed="false">Resolution</button>
+      </div>
+
+      <div class="seg" role="group" aria-label="Projection">
+        <button data-view="top"     aria-pressed="true">Top&#8209;down</button>
+        <button data-view="oblique" aria-pressed="false">2.5D</button>
+      </div>
+
+      <div class="toggles" id="toggles"></div>
+    </div>
+
+    <div class="overlay-card legend" id="legend"></div>
+    <div class="overlay-card readout" id="readout" hidden></div>
+
+    <div class="scalebar" id="scalebar"><div class="bar"></div><span>—</span></div>
+
+    <div class="transport">
+      <button id="play" aria-label="Play">&#9654;</button>
+      <input id="scrub" type="range" min="0" max="0" value="0" aria-label="Frame">
+      <span class="frame-no" id="frameno">– / –</span>
+    </div>
+
+    <div class="loading" id="loading">loading bundle&hellip;</div>
+  </section>
+
+  <!-- ============ metrics ============ -->
+  <aside class="side">
+    <div class="card">
+      <h2>Real-time performance</h2>
+      <div class="tiles">
+        <div class="tile good"><div class="val" id="t-fps">–</div>
+          <div class="lab">mapping FPS (median)</div>
+          <div class="sub" id="t-fps-sub">–</div></div>
+        <div class="tile"><div class="val" id="t-cells">–</div>
+          <div class="lab">cells this frame</div>
+          <div class="sub" id="t-cells-sub">–</div></div>
+      </div>
+      <div style="margin-top:11px">
+        <div class="stack" id="lat-stack"></div>
+        <div class="stack-legend" id="lat-legend"></div>
+      </div>
+      <p class="note" id="lat-note"></p>
+    </div>
+
+    <div class="card">
+      <h2>Memory vs uniform grids</h2>
+      <div class="tiles">
+        <div class="tile good"><div class="val" id="t-mem1">–</div>
+          <div class="lab">fewer cells than a uniform 5&nbsp;cm 2.5D grid of the same extent</div></div>
+        <div class="tile good"><div class="val" id="t-mem2">–</div>
+          <div class="lab">less memory than a uniform 5&nbsp;cm 3D voxel volume</div></div>
+      </div>
+      <div class="bars" id="mem-bars" style="margin-top:11px"></div>
+      <p class="note" id="mem-note"></p>
+    </div>
+
+    <div class="card">
+      <h2>Fidelity across distance</h2>
+      <svg class="chart" id="chart-acc" viewBox="0 0 340 150" role="img"
+           aria-label="Semantic round-trip accuracy versus range"></svg>
+      <div class="chart-legend" id="legend-acc"></div>
+      <svg class="chart" id="chart-rmse" viewBox="0 0 340 150" role="img"
+           aria-label="Horizontal quantisation error versus range"
+           style="margin-top:12px"></svg>
+      <div class="chart-legend" id="legend-rmse"></div>
+      <p class="note">Every point is re-read from the cell it landed in and
+        compared with its own ground-truth label. This is the loss the
+        <em>representation</em> causes, independent of any segmentation network.</p>
+    </div>
+
+    <div class="card">
+      <h2>Cells per resolution ring</h2>
+      <div class="bars" id="ring-bars"></div>
+    </div>
+
+    <div class="card">
+      <h2>Detected objects <span id="obj-count" style="color:var(--text-muted)"></span></h2>
+      <div class="objlist" id="objlist"></div>
+      <p class="note">Speeds are <strong>relative to the ego vehicle</strong>:
+        these sweeps carry no ego pose, so a parked car reads at road speed.
+        Exporting the scenario's pose stream makes them absolute — see
+        <code>docs/ROADMAP.md</code>.</p>
+    </div>
+
+    <div class="card">
+      <h2>Terrain &amp; planning</h2>
+      <table class="kv" id="terrain-kv"></table>
+      <p class="note">Click anywhere on the map to set a goal — the server
+        rebuilds the map and re-runs A* on it live.</p>
+    </div>
+  </aside>
+</div>
+
+<div class="tooltip" id="tooltip" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

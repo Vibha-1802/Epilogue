@@ -1,0 +1,12 @@
+environment
+.DS_Store
+.ipynb_checkpoints
+*.asv
+kitti_00
+lidar_dataset
+
+# foveated pipeline artefacts
+outputs/
+data/labeled/*/.cache/
+__pycache__/
+.pytest_cache/

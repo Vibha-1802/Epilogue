@@ -7,3 +7,24 @@ scratch/
 
 *.mp4
 *.onnx
+*.pt
+dataset/
+dataset
+
+# Virtual Environments
+environment/
+env/
+venv/
+.venv/
+
+# Node / Frontend builds
+node_modules/
+dist/
+dist-ssr/
+
+# MATLAB / Simulink cache
+*.asv
+*.slxc
+slprj/
+.pytest_cache/
+

@@ -1,0 +1,45 @@
+{
+  "description": "ClassID map for exported LiDAR frames. Road and Terrain are assigned geometrically by relabelRoadPCDs.m, not by the Class Editor.",
+  "classes": [
+    {
+      "class_id": 0,
+      "name": "Unlabelled",
+      "kind": "unlabelled"
+    },
+    {
+      "class_id": 1,
+      "name": "Car",
+      "kind": "actor"
+    },
+    {
+      "class_id": 2,
+      "name": "Truck",
+      "kind": "actor"
+    },
+    {
+      "class_id": 3,
+      "name": "Bicycle",
+      "kind": "actor"
+    },
+    {
+      "class_id": 4,
+      "name": "Pedestrian",
+      "kind": "actor"
+    },
+    {
+      "class_id": 6,
+      "name": "Guardrail",
+      "kind": "barrier"
+    },
+    {
+      "class_id": 7,
+      "name": "Road",
+      "kind": "static_surface"
+    },
+    {
+      "class_id": 8,
+      "name": "Terrain",
+      "kind": "static_surface"
+    }
+  ]
+}
